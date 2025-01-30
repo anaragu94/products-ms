@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">products-app</a> &gt; <a href="index.source.html" class="el_package">hr.products.ms.mapper</a> &gt; <span class="el_source">ProductMapperImpl.java</span></div><h1>ProductMapperImpl.java</h1><pre class="source lang-java linenums">package hr.products.ms.mapper;
+
+import hr.products.ms.dto.ProductResponse;
+import hr.products.ms.entity.ProductEntity;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2025-01-30T20:46:53+0100&quot;,
+    comments = &quot;version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Eclipse Adoptium)&quot;
+)
+@Component
+<span class="fc" id="L14">public class ProductMapperImpl implements ProductMapper {</span>
+
+    @Override
+    public ProductResponse toProductResponse(ProductEntity productEntity) {
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if ( productEntity == null ) {</span>
+<span class="nc" id="L19">            return null;</span>
+        }
+
+<span class="fc" id="L22">        ProductResponse.ProductResponseBuilder productResponse = ProductResponse.builder();</span>
+
+<span class="fc" id="L24">        productResponse.price_eur( productEntity.getPriceEur() );</span>
+<span class="fc" id="L25">        productResponse.price_usd( productEntity.getPriceUsd() );</span>
+<span class="fc" id="L26">        productResponse.is_available( productEntity.getIsAvailable() );</span>
+<span class="fc" id="L27">        productResponse.id( productEntity.getId() );</span>
+<span class="fc" id="L28">        productResponse.code( productEntity.getCode() );</span>
+<span class="fc" id="L29">        productResponse.name( productEntity.getName() );</span>
+
+<span class="fc" id="L31">        return productResponse.build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

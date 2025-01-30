@@ -1,0 +1,148 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-client/target/products-client-1.0-SNAPSHOT.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar;C:/Users/vu00385/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar;C:/Users/vu00385/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar;C:/Users/vu00385/.m2/repository/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar;C:/Users/vu00385/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar;C:/Users/vu00385/Desktop/rest/test/products-ms/products-data/target/products-data-1.0-SNAPSHOT.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-context/6.1.12/spring-context-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-aop/6.1.12/spring-aop-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-beans/6.1.12/spring-beans-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-expression/6.1.12/spring-expression-6.1.12.jar;C:/Users/vu00385/.m2/repository/io/micrometer/micrometer-observation/1.13.3/micrometer-observation-1.13.3.jar;C:/Users/vu00385/.m2/repository/io/micrometer/micrometer-commons/1.13.3/micrometer-commons-1.13.3.jar;C:/Users/vu00385/.m2/repository/com/github/docker-java/docker-java-api/3.4.0/docker-java-api-3.4.0.jar;C:/Users/vu00385/.m2/repository/net/bytebuddy/byte-buddy/1.14.19/byte-buddy-1.14.19.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.3/spring-boot-autoconfigure-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.3.3/spring-boot-starter-data-jpa-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.3.3/spring-boot-starter-aop-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.3/spring-boot-starter-jdbc-3.3.3.jar;C:/Users/vu00385/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-jdbc/6.1.12/spring-jdbc-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/hibernate/orm/hibernate-core/6.5.2.Final/hibernate-core-6.5.2.Final.jar;C:/Users/vu00385/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar;C:/Users/vu00385/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar;C:/Users/vu00385/.m2/repository/org/springframework/data/spring-data-jpa/3.3.3/spring-data-jpa-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/springframework/data/spring-data-commons/3.3.3/spring-data-commons-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-orm/6.1.12/spring-orm-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-tx/6.1.12/spring-tx-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-aspects/6.1.12/spring-aspects-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.3/spring-boot-starter-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot/3.3.3/spring-boot-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.3/spring-boot-starter-logging-3.3.3.jar;C:/Users/vu00385/.m2/repository/ch/qos/logback/logback-classic/1.5.7/logback-classic-1.5.7.jar;C:/Users/vu00385/.m2/repository/ch/qos/logback/logback-core/1.5.7/logback-core-1.5.7.jar;C:/Users/vu00385/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar;C:/Users/vu00385/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar;C:/Users/vu00385/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-core/6.1.12/spring-core-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-jcl/6.1.12/spring-jcl-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.1.4/spring-boot-starter-web-3.1.4.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.3/spring-boot-starter-json-3.3.3.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.2/jackson-datatype-jdk8-2.17.2.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.2/jackson-module-parameter-names-2.17.2.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.3/spring-boot-starter-tomcat-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.28/tomcat-embed-core-10.1.28.jar;C:/Users/vu00385/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.28/tomcat-embed-el-10.1.28.jar;C:/Users/vu00385/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.28/tomcat-embed-websocket-10.1.28.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-web/6.1.12/spring-web-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-webmvc/6.1.12/spring-webmvc-6.1.12.jar;C:/Users/vu00385/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar;C:/Users/vu00385/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar;C:/Users/vu00385/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar;C:/Users/vu00385/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar;C:/Users/vu00385/.m2/repository/jakarta/validation/jakarta.validation-api/3.1.0/jakarta.validation-api-3.1.0.jar;C:/Users/vu00385/.m2/repository/org/apache/logging/log4j/log4j-layout-template-json/2.23.1/log4j-layout-template-json-2.23.1.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-webflux/3.3.3/spring-boot-starter-webflux-3.3.3.jar;C:/Users/vu00385/.m2/repository/org/springframework/boot/spring-boot-starter-reactor-netty/3.3.3/spring-boot-starter-reactor-netty-3.3.3.jar;C:/Users/vu00385/.m2/repository/io/projectreactor/netty/reactor-netty-http/1.1.22/reactor-netty-http-1.1.22.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-codec-http/4.1.112.Final/netty-codec-http-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-common/4.1.112.Final/netty-common-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-buffer/4.1.112.Final/netty-buffer-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-transport/4.1.112.Final/netty-transport-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-codec/4.1.112.Final/netty-codec-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-handler/4.1.112.Final/netty-handler-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-codec-http2/4.1.112.Final/netty-codec-http2-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-resolver-dns/4.1.112.Final/netty-resolver-dns-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-resolver/4.1.112.Final/netty-resolver-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-codec-dns/4.1.112.Final/netty-codec-dns-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.112.Final/netty-resolver-dns-native-macos-4.1.112.Final-osx-x86_64.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.112.Final/netty-resolver-dns-classes-macos-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-transport-native-epoll/4.1.112.Final/netty-transport-native-epoll-4.1.112.Final-linux-x86_64.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.112.Final/netty-transport-native-unix-common-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.112.Final/netty-transport-classes-epoll-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/projectreactor/netty/reactor-netty-core/1.1.22/reactor-netty-core-1.1.22.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-handler-proxy/4.1.112.Final/netty-handler-proxy-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/io/netty/netty-codec-socks/4.1.112.Final/netty-codec-socks-4.1.112.Final.jar;C:/Users/vu00385/.m2/repository/org/springframework/spring-webflux/6.1.12/spring-webflux-6.1.12.jar;C:/Users/vu00385/.m2/repository/io/projectreactor/reactor-core/3.6.9/reactor-core-3.6.9.jar;C:/Users/vu00385/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+21
+-sourcepath
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/src/main/java;C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/target/apidocs'
+-docencoding
+'UTF-8'
+-Xdoclint:all
+-doctitle
+'products-app 1.0-SNAPSHOT API'
+-linkoffline
+'https://spring.io/projects/spring-boot/products-ms/products-client/apidocs' 'C:/Users/vu00385/Desktop/rest/test/products-ms/products-client/target/apidocs'
+-use
+-version
+-windowtitle
+'products-app 1.0-SNAPSHOT API'
+hr.products.ms
+hr.products.ms.configuration
+hr.products.ms.controller
+hr.products.ms.mapper
+hr.products.ms.service
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/src/main/java/hr/products/ms/Application.java'
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/src/main/java/hr/products/ms/configuration/WebClientConfiguration.java'
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/src/main/java/hr/products/ms/controller/ProductRestController.java'
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/src/main/java/hr/products/ms/mapper/ProductMapper.java'
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/src/main/java/hr/products/ms/service/ProductService.java'
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-app/target/generated-sources/annotations/hr/products/ms/mapper/ProductMapperImpl.java'
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\products-client-1.0-SNAPSHOT.jar = 1738266405058
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar = 1724060872293
+C:\Users\vu00385\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar = 1712577266075
+C:\Users\vu00385\.m2\repository\org\mapstruct\mapstruct\1.5.5.Final\mapstruct-1.5.5.Final.jar = 1712577266051
+C:\Users\vu00385\.m2\repository\org\apache\logging\log4j\log4j-core\2.23.1\log4j-core-2.23.1.jar = 1726130737855
+C:\Users\vu00385\.m2\repository\org\apache\logging\log4j\log4j-api\2.23.1\log4j-api-2.23.1.jar = 1724060878749
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar = 1724060874824
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar = 1724060875438
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-data\target\products-data-1.0-SNAPSHOT.jar = 1738266410155
+C:\Users\vu00385\.m2\repository\org\springframework\spring-context\6.1.12\spring-context-6.1.12.jar = 1726130755963
+C:\Users\vu00385\.m2\repository\org\springframework\spring-aop\6.1.12\spring-aop-6.1.12.jar = 1726130755953
+C:\Users\vu00385\.m2\repository\org\springframework\spring-beans\6.1.12\spring-beans-6.1.12.jar = 1726130756011
+C:\Users\vu00385\.m2\repository\org\springframework\spring-expression\6.1.12\spring-expression-6.1.12.jar = 1726130755968
+C:\Users\vu00385\.m2\repository\io\micrometer\micrometer-observation\1.13.3\micrometer-observation-1.13.3.jar = 1728303872253
+C:\Users\vu00385\.m2\repository\io\micrometer\micrometer-commons\1.13.3\micrometer-commons-1.13.3.jar = 1728303872559
+C:\Users\vu00385\.m2\repository\com\github\docker-java\docker-java-api\3.4.0\docker-java-api-3.4.0.jar = 1736241937383
+C:\Users\vu00385\.m2\repository\net\bytebuddy\byte-buddy\1.14.19\byte-buddy-1.14.19.jar = 1726130736186
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.3.3\spring-boot-autoconfigure-3.3.3.jar = 1726130737808
+C:\Users\vu00385\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar = 1723024888420
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.3.3\spring-boot-starter-data-jpa-3.3.3.jar = 1736241960606
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.3.3\spring-boot-starter-aop-3.3.3.jar = 1726130750267
+C:\Users\vu00385\.m2\repository\org\aspectj\aspectjweaver\1.9.22.1\aspectjweaver-1.9.22.1.jar = 1724060880765
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.3.3\spring-boot-starter-jdbc-3.3.3.jar = 1726130738477
+C:\Users\vu00385\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar = 1726130738434
+C:\Users\vu00385\.m2\repository\org\springframework\spring-jdbc\6.1.12\spring-jdbc-6.1.12.jar = 1736241959273
+C:\Users\vu00385\.m2\repository\org\hibernate\orm\hibernate-core\6.5.2.Final\hibernate-core-6.5.2.Final.jar = 1736241965477
+C:\Users\vu00385\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar = 1712837994768
+C:\Users\vu00385\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar = 1736241959639
+C:\Users\vu00385\.m2\repository\org\springframework\data\spring-data-jpa\3.3.3\spring-data-jpa-3.3.3.jar = 1736241961298
+C:\Users\vu00385\.m2\repository\org\springframework\data\spring-data-commons\3.3.3\spring-data-commons-3.3.3.jar = 1736241963119
+C:\Users\vu00385\.m2\repository\org\springframework\spring-orm\6.1.12\spring-orm-6.1.12.jar = 1736241963490
+C:\Users\vu00385\.m2\repository\org\springframework\spring-tx\6.1.12\spring-tx-6.1.12.jar = 1728303873524
+C:\Users\vu00385\.m2\repository\org\springframework\spring-aspects\6.1.12\spring-aspects-6.1.12.jar = 1736241960411
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter\3.3.3\spring-boot-starter-3.3.3.jar = 1726130737644
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot\3.3.3\spring-boot-3.3.3.jar = 1726130737791
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.3.3\spring-boot-starter-logging-3.3.3.jar = 1726232414154
+C:\Users\vu00385\.m2\repository\ch\qos\logback\logback-classic\1.5.7\logback-classic-1.5.7.jar = 1726232414475
+C:\Users\vu00385\.m2\repository\ch\qos\logback\logback-core\1.5.7\logback-core-1.5.7.jar = 1726232414890
+C:\Users\vu00385\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.23.1\log4j-to-slf4j-2.23.1.jar = 1724060874764
+C:\Users\vu00385\.m2\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar = 1726232414147
+C:\Users\vu00385\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar = 1712577264669
+C:\Users\vu00385\.m2\repository\org\springframework\spring-core\6.1.12\spring-core-6.1.12.jar = 1726130756018
+C:\Users\vu00385\.m2\repository\org\springframework\spring-jcl\6.1.12\spring-jcl-6.1.12.jar = 1726130755743
+C:\Users\vu00385\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar = 1724060878959
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.4\spring-boot-starter-web-3.1.4.jar = 1737912588036
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.3.3\spring-boot-starter-json-3.3.3.jar = 1726130750219
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.17.2\jackson-datatype-jdk8-2.17.2.jar = 1724060902058
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.17.2\jackson-datatype-jsr310-2.17.2.jar = 1724060902310
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.17.2\jackson-module-parameter-names-2.17.2.jar = 1726130750319
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.3.3\spring-boot-starter-tomcat-3.3.3.jar = 1726130750031
+C:\Users\vu00385\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.28\tomcat-embed-core-10.1.28.jar = 1726130750444
+C:\Users\vu00385\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.28\tomcat-embed-el-10.1.28.jar = 1726130750026
+C:\Users\vu00385\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.28\tomcat-embed-websocket-10.1.28.jar = 1726130750668
+C:\Users\vu00385\.m2\repository\org\springframework\spring-web\6.1.12\spring-web-6.1.12.jar = 1728303872746
+C:\Users\vu00385\.m2\repository\org\springframework\spring-webmvc\6.1.12\spring-webmvc-6.1.12.jar = 1736241961285
+C:\Users\vu00385\.m2\repository\org\projectlombok\lombok\1.18.34\lombok-1.18.34.jar = 1726130737815
+C:\Users\vu00385\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar = 1726130736078
+C:\Users\vu00385\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar = 1712577264248
+C:\Users\vu00385\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar = 1724060882612
+C:\Users\vu00385\.m2\repository\jakarta\validation\jakarta.validation-api\3.1.0\jakarta.validation-api-3.1.0.jar = 1726132478132
+C:\Users\vu00385\.m2\repository\org\apache\logging\log4j\log4j-layout-template-json\2.23.1\log4j-layout-template-json-2.23.1.jar = 1728303872366
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-webflux\3.3.3\spring-boot-starter-webflux-3.3.3.jar = 1726130750509
+C:\Users\vu00385\.m2\repository\org\springframework\boot\spring-boot-starter-reactor-netty\3.3.3\spring-boot-starter-reactor-netty-3.3.3.jar = 1726130750603
+C:\Users\vu00385\.m2\repository\io\projectreactor\netty\reactor-netty-http\1.1.22\reactor-netty-http-1.1.22.jar = 1728303873247
+C:\Users\vu00385\.m2\repository\io\netty\netty-codec-http\4.1.112.Final\netty-codec-http-4.1.112.Final.jar = 1728303873469
+C:\Users\vu00385\.m2\repository\io\netty\netty-common\4.1.112.Final\netty-common-4.1.112.Final.jar = 1728303872837
+C:\Users\vu00385\.m2\repository\io\netty\netty-buffer\4.1.112.Final\netty-buffer-4.1.112.Final.jar = 1728303872764
+C:\Users\vu00385\.m2\repository\io\netty\netty-transport\4.1.112.Final\netty-transport-4.1.112.Final.jar = 1728303872962
+C:\Users\vu00385\.m2\repository\io\netty\netty-codec\4.1.112.Final\netty-codec-4.1.112.Final.jar = 1728303873067
+C:\Users\vu00385\.m2\repository\io\netty\netty-handler\4.1.112.Final\netty-handler-4.1.112.Final.jar = 1728303873172
+C:\Users\vu00385\.m2\repository\io\netty\netty-codec-http2\4.1.112.Final\netty-codec-http2-4.1.112.Final.jar = 1728303873544
+C:\Users\vu00385\.m2\repository\io\netty\netty-resolver-dns\4.1.112.Final\netty-resolver-dns-4.1.112.Final.jar = 1728303872918
+C:\Users\vu00385\.m2\repository\io\netty\netty-resolver\4.1.112.Final\netty-resolver-4.1.112.Final.jar = 1728303872683
+C:\Users\vu00385\.m2\repository\io\netty\netty-codec-dns\4.1.112.Final\netty-codec-dns-4.1.112.Final.jar = 1728303873058
+C:\Users\vu00385\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.112.Final\netty-resolver-dns-native-macos-4.1.112.Final-osx-x86_64.jar = 1728303873186
+C:\Users\vu00385\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.112.Final\netty-resolver-dns-classes-macos-4.1.112.Final.jar = 1728303873330
+C:\Users\vu00385\.m2\repository\io\netty\netty-transport-native-epoll\4.1.112.Final\netty-transport-native-epoll-4.1.112.Final-linux-x86_64.jar = 1728303873316
+C:\Users\vu00385\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.112.Final\netty-transport-native-unix-common-4.1.112.Final.jar = 1728303873348
+C:\Users\vu00385\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.112.Final\netty-transport-classes-epoll-4.1.112.Final.jar = 1728303873423
+C:\Users\vu00385\.m2\repository\io\projectreactor\netty\reactor-netty-core\1.1.22\reactor-netty-core-1.1.22.jar = 1728303873606
+C:\Users\vu00385\.m2\repository\io\netty\netty-handler-proxy\4.1.112.Final\netty-handler-proxy-4.1.112.Final.jar = 1728303873697
+C:\Users\vu00385\.m2\repository\io\netty\netty-codec-socks\4.1.112.Final\netty-codec-socks-4.1.112.Final.jar = 1728303872581
+C:\Users\vu00385\.m2\repository\org\springframework\spring-webflux\6.1.12\spring-webflux-6.1.12.jar = 1728303872900
+C:\Users\vu00385\.m2\repository\io\projectreactor\reactor-core\3.6.9\reactor-core-3.6.9.jar = 1728303873437
+C:\Users\vu00385\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar = 1712577268852
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\src\main\java = 1737907381030
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\generated-sources\annotations = 1738266413244
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\allclasses-index.html = 1738266424589
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\allpackages-index.html = 1738266424592
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\copy.svg = 1738266424617
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\element-list = 1738266424487
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\help-doc.html = 1738266424614
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\index-all.html = 1738266424608
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\index.html = 1738266424571
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\link.svg = 1738266424619
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\member-search-index.js = 1738266424596
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\module-search-index.js = 1738266424594
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\overview-summary.html = 1738266424611
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\overview-tree.html = 1738266424568
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\package-search-index.js = 1738266424595
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\script.js = 1738266424616
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\search-page.js = 1738266424622
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\search.html = 1738266424609
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\search.js = 1738266424621
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\stylesheet.css = 1738266424615
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\tag-search-index.js = 1738266424597
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-app\target\apidocs\type-search-index.js = 1738266424595

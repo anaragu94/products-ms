@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">products-app</a> &gt; <a href="index.source.html" class="el_package">hr.products.ms.service</a> &gt; <span class="el_source">ProductService.java</span></div><h1>ProductService.java</h1><pre class="source lang-java linenums">package hr.products.ms.service;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import hr.products.ms.dto.ExchangeRateResponse;
+import hr.products.ms.dto.ProductRequest;
+import hr.products.ms.dto.ProductResponse;
+import hr.products.ms.entity.ProductEntity;
+import hr.products.ms.mapper.ProductMapper;
+import hr.products.ms.repository.ProductRepository;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * Service that contains all logic related to product data (creating, getting).
+ */
+@Service
+<span class="fc" id="L24">@Slf4j</span>
+public class ProductService {
+
+    private final ProductRepository repository;
+    private final ProductMapper mapper;
+    private final WebClient webClient;
+
+    /**
+     * Class constructor.
+     *
+     * @param repository repository
+     * @param mapper mapper
+     * @param webClient web client
+     */
+    @Autowired
+<span class="fc" id="L39">    public ProductService(ProductRepository repository, ProductMapper mapper, WebClient webClient) {</span>
+<span class="fc" id="L40">        this.repository = repository;</span>
+<span class="fc" id="L41">        this.mapper = mapper;</span>
+<span class="fc" id="L42">        this.webClient = webClient;</span>
+<span class="fc" id="L43">    }</span>
+
+
+    /**
+     * Method used for creating/adding new product to the database.
+     *
+     * @param request ProductRequest
+     * @return ProductResponse
+     */
+    public ProductResponse createProduct(ProductRequest request) {
+<span class="fc" id="L53">        validatePrice(request.getPrice_eur());</span>
+
+<span class="fc" id="L55">        ProductEntity productEntityReq = ProductEntity.builder()</span>
+<span class="fc" id="L56">            .priceEur(request.getPrice_eur())</span>
+<span class="fc" id="L57">            .name(request.getName())</span>
+<span class="fc" id="L58">            .isAvailable(request.getIs_available())</span>
+<span class="fc" id="L59">            .priceUsd(convertToUsd(request.getPrice_eur())).build();</span>
+<span class="fc" id="L60">         ProductEntity productEntityRes = repository.save(productEntityReq);</span>
+<span class="fc" id="L61">        return mapper.toProductResponse(productEntityRes);</span>
+    }
+
+
+    /**
+     * Method that returns a specific product by code.
+     *
+     * @param code product code
+     * @return ProductResponse
+     */
+    public ProductResponse getSpecificProduct(String code) {
+<span class="fc" id="L72">        Optional&lt;ProductEntity&gt; product = repository.findByCode(code);</span>
+
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (product.isEmpty()) {</span>
+<span class="fc" id="L75">            log.error(&quot;Product with code {} not found&quot;, code);</span>
+<span class="fc" id="L76">            throw new RuntimeException(&quot;Product not found&quot;);</span>
+        } else {
+<span class="fc" id="L78">            return mapper.toProductResponse(product.get());</span>
+        }
+    }
+
+    /**
+     * Method that returns a list of products with price greater than or equal to the given price.
+     * @param price product price
+     * @return List of ProductResponse
+     */
+    public List&lt;ProductResponse&gt; getProductListByPrice(BigDecimal price) {
+<span class="fc" id="L88">        List&lt;ProductEntity&gt; products = repository.findAllByPriceEurGreaterThanEqual(price);</span>
+
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        if(products.isEmpty()) {</span>
+<span class="fc" id="L91">            log.error(&quot;No products found for price {}&quot;, price);</span>
+<span class="fc" id="L92">            throw new RuntimeException(&quot;No products found&quot;);</span>
+        } else {
+<span class="fc" id="L94">            return products.stream().map(mapper::toProductResponse).collect(Collectors.toList());</span>
+        }
+    }
+
+    /**
+     * Method that returns a list of available or unavailable products depending on param.
+     *
+     * @param isAvailable true if available, false if unavailable
+     * @return List of ProductResponse
+     */
+    public List&lt;ProductResponse&gt; getAllProductsByAvailability(Boolean isAvailable) {
+<span class="fc" id="L105">        List&lt;ProductEntity&gt; products = repository.findAllByIsAvailable(isAvailable);</span>
+
+<span class="fc bfc" id="L107" title="All 2 branches covered.">        if(products.isEmpty()) {</span>
+<span class="fc" id="L108">            log.error(&quot;No products found for isAvailable {}&quot;, isAvailable);</span>
+<span class="fc" id="L109">            throw new RuntimeException(&quot;No products found&quot;);</span>
+        } else {
+<span class="fc" id="L111">            return products.stream().map(mapper::toProductResponse).collect(Collectors.toList());</span>
+        }
+    }
+
+    private BigDecimal convertToUsd(BigDecimal priceEur) {
+<span class="fc" id="L116">        BigDecimal conversionRate = getUsdConversionRate();</span>
+<span class="fc" id="L117">        return priceEur.multiply(conversionRate);</span>
+    }
+
+    private BigDecimal getUsdConversionRate() {
+<span class="fc" id="L121">        String url = &quot;https://api.hnb.hr/tecajn-eur/v3?valuta=USD&quot;;</span>
+<span class="fc" id="L122">        ExchangeRateResponse[] response = webClient.get()</span>
+<span class="fc" id="L123">            .uri(url)</span>
+<span class="fc" id="L124">            .retrieve()</span>
+<span class="fc" id="L125">            .bodyToMono(ExchangeRateResponse[].class)</span>
+<span class="fc" id="L126">            .block();</span>
+<span class="pc bpc" id="L127" title="2 of 4 branches missed.">        if (response != null &amp;&amp; response.length &gt; 0) {</span>
+<span class="fc" id="L128">            return new BigDecimal(response[0].getSrednjiTecaj().replace(&quot;,&quot;, &quot;.&quot;));</span>
+        } else {
+<span class="nc" id="L130">           return new BigDecimal(&quot;1,042100&quot;);</span>
+        }
+    }
+
+    private void validatePrice(BigDecimal priceEur) {
+<span class="pc bpc" id="L135" title="1 of 2 branches missed.">        if (priceEur.compareTo(BigDecimal.ZERO) &lt; 0) {</span>
+<span class="nc" id="L136">            throw new IllegalArgumentException(&quot;Price has to be larger or equal to zero!&quot;);</span>
+        }
+<span class="fc" id="L138">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

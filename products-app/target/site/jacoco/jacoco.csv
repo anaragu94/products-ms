@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+products-app,hr.products.ms.mapper,ProductMapper,0,5,0,0,0,1,0,1,0,1
+products-app,hr.products.ms.mapper,ProductMapperImpl,2,40,1,1,1,10,1,2,0,2
+products-app,hr.products.ms,Application,8,0,0,0,3,0,2,0,2,0
+products-app,hr.products.ms.controller,ProductRestController,13,81,0,0,3,18,0,6,0,6
+products-app,hr.products.ms.service,ProductService,10,175,3,9,2,41,3,12,0,9
+products-app,hr.products.ms.configuration,WebClientConfiguration,0,6,0,0,0,2,0,2,0,2

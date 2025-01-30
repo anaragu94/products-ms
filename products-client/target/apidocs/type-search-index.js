@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"hr.products.ms.dto","l":"ExchangeRateResponse"},{"p":"hr.products.ms.dto","l":"ProductRequest"},{"p":"hr.products.ms.dto","l":"ProductResponse"}];updateSearchResults();

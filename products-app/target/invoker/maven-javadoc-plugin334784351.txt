@@ -1,0 +1,115 @@
+Invoking Maven for the goals: [org.apache.maven.plugins:maven-javadoc-plugin:3.3.1:javadoc] with no properties
+
+M2_HOME=C:\Users\vu00385\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.3.6\plugins\maven\lib\maven3
+MAVEN_OPTS=null
+JAVA_HOME=C:\Users\vu00385\Programs\Java\jdk8
+JAVA_OPTS=null
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for hr.products:products-data:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework:spring-context:jar -> version 6.0.12 vs (?) @ line 40, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ---------------------< hr.products:products-data >----------------------
+[INFO] Building products-data 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> javadoc:3.3.1:javadoc (default-cli) > generate-sources @ products-data >>>
+[INFO] 
+[INFO] <<< javadoc:3.3.1:javadoc (default-cli) < generate-sources @ products-data <<<
+[INFO] 
+[INFO] 
+[INFO] --- javadoc:3.3.1:javadoc (default-cli) @ products-data ---
+[WARNING] 
+[INFO] No previous run data found, generating javadoc.
+[INFO] 
+Usage: javadoc [options] [packagenames] [sourcefiles] [@files]
+  -overview <file>                 Read overview documentation from HTML file
+  -public                          Show only public classes and members
+  -protected                       Show protected/public classes and members (default)
+  -package                         Show package/protected/public classes and members
+  -private                         Show all classes and members
+  -help                            Display command line options and exit
+  -doclet <class>                  Generate output via alternate doclet
+  -docletpath <path>               Specify where to find doclet class files
+  -sourcepath <pathlist>           Specify where to find source files
+  -classpath <pathlist>            Specify where to find user class files
+  -cp <pathlist>                   Specify where to find user class files
+  -exclude <pkglist>               Specify a list of packages to exclude
+  -subpackages <subpkglist>        Specify subpackages to recursively load
+  -breakiterator                   Compute first sentence with BreakIterator
+  -bootclasspath <pathlist>        Override location of class files loaded
+                                   by the bootstrap class loader
+  -source <release>                Provide source compatibility with specified release
+  -extdirs <dirlist>               Override location of installed extensions
+  -verbose                         Output messages about what Javadoc is doing
+  -locale <name>                   Locale to be used, e.g. en_US or en_US_WIN
+  -encoding <name>                 Source file encoding name
+  -quiet                           Do not display status messages
+  -J<flag>                         Pass <flag> directly to the runtime system
+  -X                               Print a synopsis of nonstandard options and exit
+
+Provided by Standard doclet:
+  -d <directory>                   Destination directory for output files
+  -use                             Create class and package usage pages
+  -version                         Include @version paragraphs
+  -author                          Include @author paragraphs
+  -docfilessubdirs                 Recursively copy doc-file subdirectories
+  -splitindex                      Split index into one file per letter
+  -windowtitle <text>              Browser window title for the documentation
+  -doctitle <html-code>            Include title for the overview page
+  -header <html-code>              Include header text for each page
+  -footer <html-code>              Include footer text for each page
+  -top    <html-code>              Include top text for each page
+  -bottom <html-code>              Include bottom text for each page
+  -link <url>                      Create links to javadoc output at <url>
+  -linkoffline <url> <url2>        Link to docs at <url> using package list at <url2>
+  -excludedocfilessubdir <name1>:.. Exclude any doc-files subdirectories with given name.
+  -group <name> <p1>:<p2>..        Group specified packages together in overview page
+  -nocomment                       Suppress description and tags, generate only declarations.
+  -nodeprecated                    Do not include @deprecated information
+  -noqualifier <name1>:<name2>:... Exclude the list of qualifiers from the output.
+  -nosince                         Do not include @since information
+  -notimestamp                     Do not include hidden time stamp
+  -nodeprecatedlist                Do not generate deprecated list
+  -notree                          Do not generate class hierarchy
+  -noindex                         Do not generate index
+  -nohelp                          Do not generate help link
+  -nonavbar                        Do not generate navigation bar
+  -serialwarn                      Generate warning about @serial tag
+  -tag <name>:<locations>:<header> Specify single argument custom tags
+  -taglet                          The fully qualified name of Taglet to register
+  -tagletpath                      The path to Taglets
+  -charset <charset>               Charset for cross-platform viewing of generated documentation.
+  -helpfile <file>                 Include file that help link links to
+  -linksource                      Generate source in HTML
+  -sourcetab <tab length>          Specify the number of spaces each tab takes up in the source
+  -keywords                        Include HTML meta tags with package, class and member info
+  -stylesheetfile <path>           File to change style of the generated documentation
+  -docencoding <name>              Specify the character encoding for the output
+1 error
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.747 s
+[INFO] Finished at: 2025-01-30T20:47:03+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-javadoc-plugin:3.3.1:javadoc (default-cli) on project products-data: An error has occurred in Javadoc report generation: 
+[ERROR] Exit code: 1 - javadoc: error - invalid flag: --release
+[ERROR] 
+[ERROR] Command line was: cmd.exe /X /C "C:\Users\vu00385\Programs\Java\jdk8\jre\..\bin\javadoc.exe @options @packages @argfile"
+[ERROR] 
+[ERROR] Refer to the generated Javadoc files in 'C:\Users\vu00385\Desktop\rest\test\products-ms\products-data\target\site\apidocs' dir.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

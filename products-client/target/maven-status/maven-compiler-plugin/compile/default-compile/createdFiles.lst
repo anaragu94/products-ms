@@ -1,0 +1,6 @@
+hr\products\ms\dto\ProductResponse.class
+hr\products\ms\dto\ProductRequest$ProductRequestBuilder.class
+hr\products\ms\dto\ProductRequest.class
+hr\products\ms\dto\ProductResponse$ProductResponseBuilder.class
+hr\products\ms\dto\ExchangeRateResponse$ExchangeRateResponseBuilder.class
+hr\products\ms\dto\ExchangeRateResponse.class

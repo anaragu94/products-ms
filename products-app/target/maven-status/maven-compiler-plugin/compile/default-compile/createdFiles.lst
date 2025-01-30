@@ -1,0 +1,6 @@
+hr\products\ms\mapper\ProductMapper.class
+hr\products\ms\mapper\ProductMapperImpl.class
+hr\products\ms\configuration\WebClientConfiguration.class
+hr\products\ms\Application.class
+hr\products\ms\controller\ProductRestController.class
+hr\products\ms\service\ProductService.class

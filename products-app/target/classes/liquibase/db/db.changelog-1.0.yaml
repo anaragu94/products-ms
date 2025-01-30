@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_schema_testdb
+      author: ragu
+      changes:
+        - sql:
+            sql: "CREATE SCHEMA IF NOT EXISTS testdb;"
+  - changeSet:
+      id: grant_usage_on_schema_testdb
+      author: ragu
+      changes:
+        - sql:
+            sql: |
+              GRANT ALL PRIVILEGES ON SCHEMA testdb TO user01;
+              GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA testdb TO user01;
+              GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA testdb TO user01;
+              GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA testdb TO user01;
+              ALTER DEFAULT PRIVILEGES IN SCHEMA testdb GRANT ALL PRIVILEGES ON TABLES TO user01;
+              ALTER DEFAULT PRIVILEGES IN SCHEMA testdb GRANT ALL PRIVILEGES ON SEQUENCES TO user01;
+              ALTER DEFAULT PRIVILEGES IN SCHEMA testdb GRANT ALL PRIVILEGES ON FUNCTIONS TO user01;

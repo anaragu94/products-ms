@@ -1,0 +1,63 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/vu00385/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar;C:/Users/vu00385/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar;C:/Users/vu00385/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar;C:/Users/vu00385/.m2/repository/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar;C:/Users/vu00385/.m2/repository/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar;C:/Users/vu00385/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar;C:/Users/vu00385/.m2/repository/jakarta/validation/jakarta.validation-api/3.1.0/jakarta.validation-api-3.1.0.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar;C:/Users/vu00385/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+21
+-sourcepath
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-client/src/main/java;C:/Users/vu00385/Desktop/rest/test/products-ms/products-client/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-client/target/apidocs'
+-docencoding
+'UTF-8'
+-Xdoclint:all
+-doctitle
+'products-client 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'products-client 1.0-SNAPSHOT API'
+hr.products.ms.dto
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-client/src/main/java/hr/products/ms/dto/ExchangeRateResponse.java'
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-client/src/main/java/hr/products/ms/dto/ProductRequest.java'
+'C:/Users/vu00385/Desktop/rest/test/products-ms/products-client/src/main/java/hr/products/ms/dto/ProductResponse.java'
+C:\Users\vu00385\.m2\repository\org\projectlombok\lombok\1.18.34\lombok-1.18.34.jar = 1726130737815
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar = 1724060872293
+C:\Users\vu00385\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar = 1712577266075
+C:\Users\vu00385\.m2\repository\org\mapstruct\mapstruct\1.5.5.Final\mapstruct-1.5.5.Final.jar = 1712577266051
+C:\Users\vu00385\.m2\repository\org\mapstruct\mapstruct-processor\1.5.5.Final\mapstruct-processor-1.5.5.Final.jar = 1712577312186
+C:\Users\vu00385\.m2\repository\org\apache\logging\log4j\log4j-core\2.23.1\log4j-core-2.23.1.jar = 1726130737855
+C:\Users\vu00385\.m2\repository\org\apache\logging\log4j\log4j-api\2.23.1\log4j-api-2.23.1.jar = 1724060878749
+C:\Users\vu00385\.m2\repository\jakarta\validation\jakarta.validation-api\3.1.0\jakarta.validation-api-3.1.0.jar = 1726132478132
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar = 1724060874824
+C:\Users\vu00385\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar = 1724060875438
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\src\main\java = 1737908322440
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\generated-sources\annotations = 1738266402840
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\allclasses-index.html = 1738266408252
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\allpackages-index.html = 1738266408254
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\copy.svg = 1738266408277
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\element-list = 1738266408196
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\help-doc.html = 1738266408271
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\index-all.html = 1738266408264
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\index.html = 1738266408267
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\link.svg = 1738266408278
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\member-search-index.js = 1738266408257
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\module-search-index.js = 1738266408255
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\overview-tree.html = 1738266408243
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\package-search-index.js = 1738266408256
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\script.js = 1738266408275
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\search-page.js = 1738266408283
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\search.html = 1738266408266
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\search.js = 1738266408281
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\stylesheet.css = 1738266408274
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\tag-search-index.js = 1738266408257
+C:\Users\vu00385\Desktop\rest\test\products-ms\products-client\target\apidocs\type-search-index.js = 1738266408256

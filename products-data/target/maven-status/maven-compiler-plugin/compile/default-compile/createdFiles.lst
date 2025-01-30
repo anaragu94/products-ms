@@ -1,0 +1,4 @@
+hr\products\ms\configuration\DataConfiguration.class
+hr\products\ms\repository\ProductRepository.class
+hr\products\ms\entity\ProductEntity.class
+hr\products\ms\entity\ProductEntity$ProductEntityBuilder.class

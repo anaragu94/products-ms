@@ -1,0 +1,75 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table.product
+      author: ragu
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: xproduct0
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: code
+                  type: VARCHAR(10)
+              - column:
+                  name: name
+                  type: VARCHAR(128)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price_eur
+                  type: numeric(17, 3)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price_usd
+                  type: numeric(17, 3)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: is_available
+                  type: BOOLEAN
+            schemaName: testdb
+            tableName: product
+
+  - changeSet:
+      id: create_index_xproduct1_code_on_table.product
+      author: ragu
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: code
+            indexName: xproduct1
+            schemaName: testdb
+            tableName: product
+
+  - changeSet:
+      id: create_index_xproduct2_price_on_table.product
+      author: ragu
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: price_eur
+            indexName: xproduct2
+            schemaName: testdb
+            tableName: product
+
+  - changeSet:
+      id: create_index_xproduct3_is_available_on_table.product
+      author: ragu
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: is_available
+            indexName: xproduct3
+            schemaName: testdb
+            tableName: product

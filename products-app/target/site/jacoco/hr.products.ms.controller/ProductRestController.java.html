@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductRestController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">products-app</a> &gt; <a href="index.source.html" class="el_package">hr.products.ms.controller</a> &gt; <span class="el_source">ProductRestController.java</span></div><h1>ProductRestController.java</h1><pre class="source lang-java linenums">package hr.products.ms.controller;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import hr.products.ms.dto.ProductRequest;
+import hr.products.ms.dto.ProductResponse;
+import hr.products.ms.service.ProductService;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * Rest controller for POST and GET operations for product entity.
+ */
+<span class="fc" id="L26">@Slf4j</span>
+@RestController
+@RequestMapping(path = {&quot;/api/product&quot;})
+public class ProductRestController {
+
+    private final ProductService productService;
+
+    @Autowired
+<span class="fc" id="L34">    public ProductRestController(ProductService productService) {</span>
+<span class="fc" id="L35">        this.productService = productService;</span>
+<span class="fc" id="L36">    }</span>
+
+    /**
+     * REST {@code POST} endpoint used for creating a product.
+     *
+     * @param request Product request
+     * @param headers HttpHeaders
+     * @return ResponseEntity with ProductResponse
+     */
+    @PostMapping
+    public ResponseEntity&lt;ProductResponse&gt; createProduct(
+        @RequestBody ProductRequest request,
+        @RequestHeader HttpHeaders headers
+    ) {
+<span class="fc" id="L50">        log.info(&quot;Received request to create product: {}&quot;, request);</span>
+<span class="fc" id="L51">        ProductResponse response = null;</span>
+        try {
+<span class="fc" id="L53">            response = productService.createProduct(request);</span>
+<span class="nc" id="L54">        } catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L55">            log.error(&quot;Error creating product&quot;, e);</span>
+<span class="nc" id="L56">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).headers(headers).body(response);</span>
+<span class="fc" id="L57">        }</span>
+<span class="fc" id="L58">        return ResponseEntity.status(HttpStatus.ACCEPTED).headers(headers).body(response);</span>
+    }
+
+    /**
+     * REST {@code GET} endpoint used for getting a specific product by code.
+     *
+     * @param code    Product code
+     * @param headers HttpHeaders
+     * @return ResponseEntity with ProductResponse
+     */
+    @GetMapping(path = &quot;/{code}&quot;)
+    public ResponseEntity&lt;ProductResponse&gt; getSpecificProduct(
+        @PathVariable String code,
+        @RequestHeader HttpHeaders headers
+    ) {
+<span class="fc" id="L73">        log.info(&quot;Received request to get product with code: {}&quot;, code);</span>
+<span class="fc" id="L74">        ProductResponse response = productService.getSpecificProduct(code);</span>
+<span class="fc" id="L75">        return ResponseEntity.status(HttpStatus.ACCEPTED).headers(headers).body(response);</span>
+    }
+
+    /**
+     * REST {@code GET} endpoint used for getting a list of products that are greater or equal than given price in euros.
+     *
+     * @param price   product price
+     * @param headers HttpHeaders
+     * @return ResponseEntity with List of ProductResponse
+     */
+    @GetMapping(path = &quot;/list/{price}&quot;)
+    public ResponseEntity&lt;List&lt;ProductResponse&gt;&gt; getProductList(
+        @PathVariable(&quot;price&quot;) BigDecimal price,
+        @RequestHeader HttpHeaders headers
+    ) {
+<span class="fc" id="L90">        log.info(&quot;Received request to get list of products for given price: {}&quot;, price);</span>
+<span class="fc" id="L91">        List&lt;ProductResponse&gt; responseList = productService.getProductListByPrice(price);</span>
+<span class="fc" id="L92">        return ResponseEntity.status(HttpStatus.ACCEPTED).headers(headers).body(responseList);</span>
+    }
+
+
+    /**
+     * REST {@code GET} endpoint used for getting a list of products that are available or not available, depending on
+     * given value.
+     *
+     * @param isAvailable boolean value for availability
+     * @param headers HttpHeaders
+     * @return ResponseEntity with List of ProductResponse
+     */
+    @GetMapping(path = &quot;/list/{isAvailable}&quot;)
+    public ResponseEntity&lt;List&lt;ProductResponse&gt;&gt; getProductList(
+        @PathVariable(&quot;isAvailable&quot;) Boolean isAvailable,
+        @RequestHeader HttpHeaders headers
+    ) {
+<span class="fc" id="L109">        log.info(&quot;Received request to get list of products for given availability: {}&quot;, isAvailable);</span>
+<span class="fc" id="L110">        List&lt;ProductResponse&gt; responseList = productService.getAllProductsByAvailability(isAvailable);</span>
+<span class="fc" id="L111">        return ResponseEntity.status(HttpStatus.ACCEPTED).headers(headers).body(responseList);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

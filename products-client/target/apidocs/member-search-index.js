@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"hr.products.ms.dto","c":"ExchangeRateResponse","l":"ExchangeRateResponse()","u":"%3Cinit%3E()"},{"p":"hr.products.ms.dto","c":"ProductRequest","l":"ProductRequest()","u":"%3Cinit%3E()"},{"p":"hr.products.ms.dto","c":"ProductResponse","l":"ProductResponse()","u":"%3Cinit%3E()"}];updateSearchResults();

@@ -1,0 +1,4 @@
+hr\products\ms\configuration\WebClientConfigurationTest.class
+hr\products\ms\controller\ProductRestControllerTest.class
+hr\products\ms\mapper\ProductMapperTest.class
+hr\products\ms\service\ProductServiceTest.class
